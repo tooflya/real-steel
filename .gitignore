@@ -13,6 +13,7 @@
 *.a
 
 # User settings
+.*
 proj.mac/Build
 proj.ios/Build
 proj.android/assets
