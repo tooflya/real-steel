@@ -24,6 +24,8 @@
 
 #include "Options.h"
 
+#include "Touchable.h"
+
 class Entity : public CCSprite, public Touchable
 {
   protected:

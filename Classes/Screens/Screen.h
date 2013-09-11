@@ -24,6 +24,8 @@
 
 #include "Options.h"
 
+#include "Touchable.h"
+
 class Screen : public CCScene, public Touchable
 {
   protected:

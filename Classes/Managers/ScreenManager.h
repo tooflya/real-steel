@@ -22,6 +22,8 @@
 #ifndef CONST_SCREENMANAGER_H
 #define CONST_SCREENMANAGER_H
 
+#include "Options.h"
+
 #include "Screen.h"
 
 class ScreenManager : public CCObject
