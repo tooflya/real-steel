@@ -24,6 +24,8 @@
 
 #include "AppDelegate.h"
 
+#include "Loader.h"
+
 // ===========================================================
 // Inner Classes
 // ===========================================================
@@ -84,7 +86,7 @@ bool AppDelegate::applicationDidFinishLaunching()
 
   director->setAnimationInterval(1.0f / 60.0f);
 
-  director->runWithScene(CCScene::create());
+  director->runWithScene(Loader::create());
 
   return true;
 }

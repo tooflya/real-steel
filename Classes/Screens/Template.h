@@ -1,6 +1,6 @@
 /**
  * Tooflya Inc. Development
- * @file Screen.h
+ * @file Template.h
  * @category header file
  *
  * @author Igor Mats from Tooflya Inc.
@@ -19,18 +19,12 @@
  *
  */
 
-#ifndef CONST_SCREEN_H
-#define CONST_SCREEN_H
+#ifndef CONST_TEMPLATE_H
+#define CONST_TEMPLATE_H
 
-#include "Options.h"
+#include "Screen.h"
 
-#include "Touchable.h"
-#include "Entity.h"
-#include "TiledEntity.h"
-#include "AnimatedEntity.h"
-#include "Text.h"
-
-class Screen : public CCScene, public Touchable
+class Template : public Screen
 {
   protected:
   // ===========================================================
@@ -49,17 +43,15 @@ class Screen : public CCScene, public Touchable
   // Constructors
   // ===========================================================
 
-  Screen();
+  Template();
 
   // ===========================================================
   // Methods
   // ===========================================================
 
   // ===========================================================
-  // Override Methods
+  // Virtual Methods
   // ===========================================================
-
-  bool containsTouchLocation(CCTouch* touch);
 
   private:
   // ===========================================================
@@ -83,7 +75,7 @@ class Screen : public CCScene, public Touchable
   // ===========================================================
 
   // ===========================================================
-  // Override Methods
+  // Virtual Methods
   // ===========================================================
 
   public:
@@ -103,15 +95,19 @@ class Screen : public CCScene, public Touchable
   // Constructors
   // ===========================================================
 
-  ~Screen();
+  static Template* create();
+
+  ~Template();
 
   // ===========================================================
   // Methods
   // ===========================================================
 
   // ===========================================================
-  // Override Methods
+  // Virtual Methods
   // ===========================================================
+
+  void update(float pDeltaTime);
 
   void onEnter();
   void onExit();

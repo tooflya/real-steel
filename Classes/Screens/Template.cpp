@@ -1,6 +1,6 @@
 /**
  * Tooflya Inc. Development
- * @file Options.cpp
+ * @file Template.cpp
  * @category cpp file
  *
  * @author Igor Mats from Tooflya Inc.
@@ -19,10 +19,10 @@
  *
  */
 
-#ifndef CONST_OPTIONS
-#define CONST_OPTIONS
+#ifndef CONST_TEMPLATE
+#define CONST_TEMPLATE
 
-#include "Options.h"
+#include "Template.h"
 
 // ===========================================================
 // Inner Classes
@@ -32,29 +32,6 @@
 // Constants
 // ===========================================================
 
-int Options::CENTER_X = 0;
-int Options::CENTER_Y = 0;
-
-int Options::SCREEN_WIDTH = 0;
-int Options::SCREEN_HEIGHT = 0;
-
-int Options::SCREEN_CENTER_X = 0;
-int Options::SCREEN_CENTER_Y = 0;
-
-int Options::CAMERA_WIDTH = 0;
-int Options::CAMERA_HEIGHT = 0;
-
-int Options::CAMERA_CENTER_X = 0;
-int Options::CAMERA_CENTER_Y = 0;
-
-bool Options::MUSIC_ENABLE = false;
-bool Options::SOUND_ENABLE = false;
-
-const char* Options::VERSION = "0.0.1";
-const char* Options::BUILD = "0";
-
-const char* Options::FONT = "Fonts/ALoveofThunder.ttf";
-
 // ===========================================================
 // Fields
 // ===========================================================
@@ -63,6 +40,25 @@ const char* Options::FONT = "Fonts/ALoveofThunder.ttf";
 // Constructors
 // ===========================================================
 
+Template::~Template()
+{
+
+}
+
+Template::Template()
+{
+
+}
+
+Template* Template::create()
+{
+  Template* screen = new Template();
+  screen->autorelease();
+  screen->retain();
+
+  return screen;
+}
+
 // ===========================================================
 // Methods
 // ===========================================================
@@ -70,5 +66,20 @@ const char* Options::FONT = "Fonts/ALoveofThunder.ttf";
 // ===========================================================
 // Virtual Methods
 // ===========================================================
+
+void Template::update(float pDeltaTime)
+{
+  Screen::update(pDeltaTime);
+}
+
+void Template::onEnter()
+{
+  Screen::onEnter();
+}
+
+void Template::onExit()
+{
+  Screen::onExit();
+}
 
 #endif

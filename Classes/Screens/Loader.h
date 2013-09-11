@@ -1,6 +1,6 @@
 /**
  * Tooflya Inc. Development
- * @file Screen.h
+ * @file Loader.h
  * @category header file
  *
  * @author Igor Mats from Tooflya Inc.
@@ -19,18 +19,12 @@
  *
  */
 
-#ifndef CONST_SCREEN_H
-#define CONST_SCREEN_H
+#ifndef CONST_TEMPLATE_H
+#define CONST_TEMPLATE_H
 
-#include "Options.h"
+#include "Screen.h"
 
-#include "Touchable.h"
-#include "Entity.h"
-#include "TiledEntity.h"
-#include "AnimatedEntity.h"
-#include "Text.h"
-
-class Screen : public CCScene, public Touchable
+class Loader : public Screen
 {
   protected:
   // ===========================================================
@@ -45,21 +39,28 @@ class Screen : public CCScene, public Touchable
   // Fields
   // ===========================================================
 
+  int mPercentageLoaded;
+
+  bool mIsLoadingAnimationRunning;
+
+  Text* mVersionText;
+  Text* mLoadingText;
+
   // ===========================================================
   // Constructors
   // ===========================================================
 
-  Screen();
+  Loader();
 
   // ===========================================================
   // Methods
   // ===========================================================
 
-  // ===========================================================
-  // Override Methods
-  // ===========================================================
+  void onLoadingFinish();
 
-  bool containsTouchLocation(CCTouch* touch);
+  // ===========================================================
+  // Virtual Methods
+  // ===========================================================
 
   private:
   // ===========================================================
@@ -83,7 +84,7 @@ class Screen : public CCScene, public Touchable
   // ===========================================================
 
   // ===========================================================
-  // Override Methods
+  // Virtual Methods
   // ===========================================================
 
   public:
@@ -103,15 +104,19 @@ class Screen : public CCScene, public Touchable
   // Constructors
   // ===========================================================
 
-  ~Screen();
+  static Loader* create();
+
+  ~Loader();
 
   // ===========================================================
   // Methods
   // ===========================================================
 
   // ===========================================================
-  // Override Methods
+  // Virtual Methods
   // ===========================================================
+
+  void update(float pDeltaTime);
 
   void onEnter();
   void onExit();

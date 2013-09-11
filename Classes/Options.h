@@ -30,6 +30,8 @@ using namespace std;
 using namespace cocos2d;
 using namespace CocosDenshion;
 
+#define ccsf(...) CCString::createWithFormat(__VA_ARGS__)->getCString()
+
 class Options
 {
   protected:
@@ -108,6 +110,11 @@ class Options
 
   static bool MUSIC_ENABLE;
   static bool SOUND_ENABLE;
+
+  static const char* VERSION;
+  static const char* BUILD;
+
+  static const char* FONT;
 
   // ===========================================================
   // Fields

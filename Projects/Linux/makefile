@@ -33,9 +33,11 @@ SOURCES = ./main.cpp \
 			../../../Classes/Entities/Entity.cpp \
 			../../../Classes/Entities/TiledEntity.cpp \
 			../../../Classes/Entities/AnimatedEntity.cpp \
+			../../../Classes/Entities/Text.cpp \
 			../../../Classes/Managers/EntityManager.cpp \
 			../../../Classes/Managers/ScreenManager.cpp \
 			../../../Classes/Screens/Screen.cpp \
+			../../../Classes/Screens/Loader.cpp \
 
 COCOS_ROOT = ../../../../..
 include $(COCOS2DX_PATH)/proj.linux/cocos2dx.mk

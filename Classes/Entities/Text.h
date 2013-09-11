@@ -1,6 +1,6 @@
 /**
  * Tooflya Inc. Development
- * @file Screen.h
+ * @file Text.h
  * @category header file
  *
  * @author Igor Mats from Tooflya Inc.
@@ -19,18 +19,14 @@
  *
  */
 
-#ifndef CONST_SCREEN_H
-#define CONST_SCREEN_H
+#ifndef CONST_TEXT_H
+#define CONST_TEXT_H
 
 #include "Options.h"
 
-#include "Touchable.h"
-#include "Entity.h"
-#include "TiledEntity.h"
-#include "AnimatedEntity.h"
-#include "Text.h"
+#include "Utils.h"
 
-class Screen : public CCScene, public Touchable
+class Text : public CCLabelTTF
 {
   protected:
   // ===========================================================
@@ -49,7 +45,7 @@ class Screen : public CCScene, public Touchable
   // Constructors
   // ===========================================================
 
-  Screen();
+  Text(const char* pString, float pSize, CCNode* pParent);
 
   // ===========================================================
   // Methods
@@ -58,8 +54,6 @@ class Screen : public CCScene, public Touchable
   // ===========================================================
   // Override Methods
   // ===========================================================
-
-  bool containsTouchLocation(CCTouch* touch);
 
   private:
   // ===========================================================
@@ -99,22 +93,36 @@ class Screen : public CCScene, public Touchable
   // Fields
   // ===========================================================
 
+  float mInitCenterX;
+  float mInitCenterY;
+
   // ===========================================================
   // Constructors
   // ===========================================================
 
-  ~Screen();
+  static Text* create(const char* pString, float pSize, CCNode* pParent);
+
+  ~Text();
 
   // ===========================================================
   // Methods
   // ===========================================================
 
+  void setPosition(float pX, float pY);
+  void setCenterPosition(float pCenterX, float pCenterY);
+
+  float getWidth();
+  float getHeight();
+
+  float getCenterX();
+  float getCenterY();
+
+  void enableShadow();
+  void disableShadow();
+
   // ===========================================================
   // Override Methods
   // ===========================================================
-
-  void onEnter();
-  void onExit();
 };
 
 #endif
