@@ -5,9 +5,9 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleDisplayName</key>
-	<string>Circle Game</string>
+	<string>Real Steel</string>
 	<key>CFBundleExecutable</key>
-	<string>Circle Game</string>
+	<string>Real Steel</string>
 	<key>CFBundleGetInfoString</key>
 	<string></string>
 	<key>CFBundleIconFile</key>
@@ -69,7 +69,7 @@
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSApplicationCategoryType</key>
-	<string></string>
+	<string>public.app-category.adventure-games</string>
 	<key>LSRequiresIPhoneOS</key>
 	<false/>
 	<key>UIPrerenderedIcon</key>
