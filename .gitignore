@@ -14,11 +14,11 @@
 
 # User settings
 .*
-proj.mac/Build
-proj.ios/Build
-proj.android/assets
-proj.android/bin
-proj.android/obj
-proj.android/gen
-proj.linux/obj
-proj.linux/bin
+Projects/Mac/Build
+Projects/iOS/Build
+Projects/Android/assets
+Projects/Android/bin
+Projects/Android/obj
+Projects/Android/gen
+Projects/Linux/obj
+Projects/Linux/bin
