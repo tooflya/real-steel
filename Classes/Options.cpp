@@ -53,7 +53,15 @@ bool Options::SOUND_ENABLE = false;
 const char* Options::VERSION = "0.0.1";
 const char* Options::BUILD = "0";
 
+#if CC_TARGET_PLATFORM == CC_PLATFORM_IOS || CC_TARGET_PLATFORM == CC_PLATFORM_MAC
+
+const char* Options::FONT = "ALoveofThunder";
+
+#else
+
 const char* Options::FONT = "Fonts/ALoveofThunder.ttf";
+
+#endif
 
 // ===========================================================
 // Fields
