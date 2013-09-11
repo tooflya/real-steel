@@ -1,6 +1,6 @@
 /**
  * Tooflya Inc. Development
- * @file ScreenManager.h
+ * @file Arena.h
  * @category header file
  *
  * @author Igor Mats from Tooflya Inc.
@@ -19,12 +19,12 @@
  *
  */
 
-#ifndef CONST_SCREENMANAGER_H
-#define CONST_SCREENMANAGER_H
+#ifndef CONST_ARENA_H
+#define CONST_ARENA_H
 
 #include "Screen.h"
 
-class ScreenManager : public CCObject
+class Arena : public Screen
 {
   protected:
   // ===========================================================
@@ -43,7 +43,7 @@ class ScreenManager : public CCObject
   // Constructors
   // ===========================================================
 
-  ScreenManager();
+  Arena();
 
   // ===========================================================
   // Methods
@@ -91,29 +91,26 @@ class ScreenManager : public CCObject
   // Fields
   // ===========================================================
 
-  Screen* mScreens[2];
-
-  int mCurrentScreenIndex;
-
   // ===========================================================
   // Constructors
   // ===========================================================
 
-  static ScreenManager* create();
+  static Arena* create();
 
-  ~ScreenManager();
+  ~Arena();
 
   // ===========================================================
   // Methods
   // ===========================================================
 
-  void set(int pIndex);
-
-  void generate();
-
   // ===========================================================
   // Virtual Methods
   // ===========================================================
+
+  void update(float pDeltaTime);
+
+  void onEnter();
+  void onExit();
 };
 
 #endif

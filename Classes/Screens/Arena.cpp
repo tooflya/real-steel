@@ -1,6 +1,6 @@
 /**
  * Tooflya Inc. Development
- * @file ScreenManager.cpp
+ * @file Arena.cpp
  * @category cpp file
  *
  * @author Igor Mats from Tooflya Inc.
@@ -19,12 +19,9 @@
  *
  */
 
-#ifndef CONST_SCREENMANAGER
-#define CONST_SCREENMANAGER
+#ifndef CONST_ARENA
+#define CONST_ARENA
 
-#include "ScreenManager.h"
-
-#include "Loader.h"
 #include "Arena.h"
 
 // ===========================================================
@@ -43,21 +40,23 @@
 // Constructors
 // ===========================================================
 
-ScreenManager::~ScreenManager()
+Arena::~Arena()
 {
+  CCLog("Arena screen was deleted.");
 }
 
-ScreenManager::ScreenManager()
+Arena::Arena()
 {
+
 }
 
-ScreenManager* ScreenManager::create()
+Arena* Arena::create()
 {
-  ScreenManager* manager = new ScreenManager();
-  manager->autorelease();
-  manager->retain();
+  Arena* screen = new Arena();
+  screen->autorelease();
+  screen->retain();
 
-  return manager;
+  return screen;
 }
 
 // ===========================================================
@@ -68,39 +67,19 @@ ScreenManager* ScreenManager::create()
 // Virtual Methods
 // ===========================================================
 
-// ===========================================================
-// Constructors
-// ===========================================================
-
-// ===========================================================
-// Getters
-// ===========================================================
-
-// ===========================================================
-// Setters
-// ===========================================================
-
-// ===========================================================
-// Methods
-// ===========================================================
-
-void ScreenManager::set(int pIndex)
+void Arena::update(float pDeltaTime)
 {
-  this->mCurrentScreenIndex = pIndex;
-
-  CCDirector::sharedDirector()->replaceScene(this->mScreens[pIndex]);
+  Screen::update(pDeltaTime);
 }
 
-void ScreenManager::generate()
+void Arena::onEnter()
 {
-  this->mScreens[0] = Loader::create();
-  this->mScreens[1] = Arena::create();
-
-  this->set(1);
+  Screen::onEnter();
 }
 
-// ===========================================================
-// Virtual methods
-// ===========================================================
+void Arena::onExit()
+{
+  Screen::onExit();
+}
 
 #endif

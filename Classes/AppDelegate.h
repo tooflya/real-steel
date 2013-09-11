@@ -22,7 +22,7 @@
 #ifndef CONST_APPDELEGATE_H
 #define CONST_APPDELEGATE_H
 
-#include "Options.h"
+#include "ScreenManager.h"
 
 typedef struct tagResource {
   CCSize size;
@@ -42,6 +42,8 @@ class AppDelegate : private CCApplication
   // ===========================================================
   // Constants
   // ===========================================================
+
+  static ScreenManager* mSharedScreenManager;
 
   // ===========================================================
   // Fields
@@ -104,7 +106,9 @@ class AppDelegate : private CCApplication
   // ===========================================================
   // Methods
   // ===========================================================
-    
+
+  static ScreenManager* sharedScreenManager();
+
   // ===========================================================
   // Virtual Methods
   // ===========================================================

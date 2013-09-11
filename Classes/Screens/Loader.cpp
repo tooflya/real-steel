@@ -19,10 +19,13 @@
  *
  */
 
-#ifndef CONST_TEMPLATE
-#define CONST_TEMPLATE
+#ifndef CONST_LOADER
+#define CONST_LOADER
 
 #include "Loader.h"
+
+#include "AppDelegate.h"
+#include "ScreenManager.h"
 
 // ===========================================================
 // Inner Classes
@@ -42,7 +45,7 @@
 
 Loader::~Loader()
 {
-
+  CCLog("Loader screen was deleted.");
 }
 
 Loader::Loader()
@@ -71,7 +74,7 @@ Loader* Loader::create()
 
 void Loader::onLoadingFinish()
 {
-
+  AppDelegate::sharedScreenManager()->generate();
 }
 
 // ===========================================================

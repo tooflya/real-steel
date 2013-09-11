@@ -19,8 +19,8 @@
  *
  */
 
-#ifndef CONST_TEMPLATE_H
-#define CONST_TEMPLATE_H
+#ifndef CONST_LOADER_H
+#define CONST_LOADER_H
 
 #include "Screen.h"
 

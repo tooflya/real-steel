@@ -34,6 +34,8 @@
 // Constants
 // ===========================================================
 
+ScreenManager* AppDelegate::mSharedScreenManager = NULL;
+
 // ===========================================================
 // Fields
 // ===========================================================
@@ -45,6 +47,11 @@
 // ===========================================================
 // Methods
 // ===========================================================
+
+ScreenManager* AppDelegate::sharedScreenManager()
+{
+  return mSharedScreenManager;
+}
 
 // ===========================================================
 // Override Methods
@@ -64,6 +71,8 @@ bool AppDelegate::applicationDidFinishLaunching()
   searchPath.push_back(resources800x600.directory);
 
   CCFileUtils::sharedFileUtils()->setSearchPaths(searchPath);
+
+  mSharedScreenManager = ScreenManager::create();
 
   Options::SCREEN_WIDTH = designResolutionSize.width;
   Options::SCREEN_HEIGHT = designResolutionSize.height;

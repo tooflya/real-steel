@@ -22,8 +22,6 @@
 #ifndef CONST_TEXT_H
 #define CONST_TEXT_H
 
-#include "Options.h"
-
 #include "Utils.h"
 
 class Text : public CCLabelTTF
